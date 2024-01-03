@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-def islower(l):
-    checker = ord(l)
+def islower(c):
+    checker = ord(c)
     if checker >= 97 and checker <= 122:
         return True
     else:
