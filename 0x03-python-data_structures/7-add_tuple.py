@@ -6,4 +6,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
     b2 = tuple_b[1] if len(tuple_b) >= 2 else 0
     ad_a = a1 + b1
     ad_b = b1 + a2
-    return(ad_a, ad_b)
+    return (ad_a, ad_b)
