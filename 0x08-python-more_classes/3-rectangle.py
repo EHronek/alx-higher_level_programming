@@ -62,6 +62,7 @@ class Rectangle:
             return 0
         else:
             prm = (self.height * 2) + (self.width * 2)
+
     @property
     def height(self):
         """Getter for the height of a rectangle"""
@@ -82,11 +83,11 @@ class Rectangle:
 """
         a = self.height * self.width
         return a
-  
+
     def perimeter(self):
         """Returns the rectangular perimeter"""
         if self.height == 0 or self.width == 0:
-          return 0
+            return 0
         else:
             prm = (self.height * 2) + (self.width * 2)
             return (prm)
