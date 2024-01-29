@@ -26,6 +26,7 @@ class Rectangle:
     def width(self):
         """Getter method for width of rectangle"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """Setter method fot width of rectangle
@@ -50,10 +51,11 @@ class Rectangle:
     def area(self):
         """calculates the area of a rectangle
         Returns:
-	    int: the area of rectangle
+            int: the area of rectangle
 """
         a = self.height * self.width
         return a
+
     def perimeter(self):
         """Returns the rectangular perimeter"""
         if self.height == 0 or self.width == 0:
