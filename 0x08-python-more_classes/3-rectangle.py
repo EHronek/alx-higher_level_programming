@@ -90,3 +90,18 @@ class Rectangle:
         else:
             prm = (self.height * 2) + (self.width * 2)
             return (prm)
+
+    def __str__(self):
+        """it returns the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rec = []
+        for i in range(self.__height):
+            [rec.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                rec.append("\n")
+        return ("".join(rec))
