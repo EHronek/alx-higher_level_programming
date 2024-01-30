@@ -62,6 +62,7 @@ class Rectangle:
             return 0
         else:
             prm = (self.height * 2) + (self.width * 2)
+            return prm
 
     @property
     def height(self):
