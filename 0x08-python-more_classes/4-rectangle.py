@@ -80,7 +80,7 @@ class Rectangle:
             if i != self.height - 1:
                 rectangle += "#" * self.width + '\n'
             else:
-                rectangle += "#" * self.width 
+                rectangle += "#" * self.width
         return rectangle
 
     def __repr__(self):
