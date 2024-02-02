@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" writing a function that prints a text with 2-new liens after each character: '.', '?', ':'
+""" writing a function that prints a text with 2-new liens after each
+character: '.', '?', ':'
 """
 
 
