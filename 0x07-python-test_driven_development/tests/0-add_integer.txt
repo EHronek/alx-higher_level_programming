@@ -138,3 +138,50 @@ Usage
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+    if both are non-integers and non-floats, a TypeError meesage is only printed for the first argument 
+
+    ::
+
+    >>> add_integer("hello", "there")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    If infinity is provided it should fail
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    Also addition of integer and a positive undefined number
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last)
+
+   an integr and a negative undefined number
+   >>> add_integer(1, float('-inf'))
+   Traceback (most recent call last):
+       ...
+   OverflowError: cannot convert float infinity to integer
+
+
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('-inf'), 1)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    valueError: cannot convert float NaN to integer
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
