@@ -41,7 +41,7 @@ This module defines the a class ``MyList`` that inherits from list builtin. It h
     TypeError should be raised for anymore that one instantiation
     >>> my_list = MyList([2, 3], [4, 5])
     Traceback (most recent call last):
-    TypeError: list() takes at most 1 argument (2-given)
+    TypeError: list expected at most 1 argument, got 2
 
 
 
@@ -52,14 +52,14 @@ This module defines the a class ``MyList`` that inherits from list builtin. It h
     >>> my_list.append(3)
     >>> my_list.append(5)
     >>> print(my_list)
-    [1, 4, 2, 3, 5]
+    [1, 2, 4, 1, 4, 2, 3, 5]
     >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+    [1, 1, 2, 2, 3, 4, 4, 5]
 
     The order of the original list remains unchanged even after the call to the method
 
     >>> print(my_list)
-    [1, 4, 2, 3, 5]
+    [1, 2, 4, 1, 4, 2, 3, 5]
 
 
     Replaced with indexing:
@@ -68,7 +68,7 @@ This module defines the a class ``MyList`` that inherits from list builtin. It h
 
     >>> my_list[0] = 5
     >>> print(my_list)
-    [5, 2, 3]
+    [5, 2, 4, 1, 4, 2, 3, 5]
 
 And removed with the ``remove()`` method.
 
@@ -76,7 +76,7 @@ And removed with the ``remove()`` method.
 
     >>> my_list.remove(5)
     >>> print(my_list)
-    [2, 3]
+    [2, 4, 1, 4, 2, 3, 5]
 
     the class ``MyList`` also implements a single method - a public instance method
 ``print_sorted(self)``.
