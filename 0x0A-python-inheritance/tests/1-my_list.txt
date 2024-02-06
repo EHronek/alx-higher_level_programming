@@ -1,0 +1,88 @@
+#1-my_list.txt
+===============
+
+Test for ``MyList`` class and its function ``print_sorted``
+-----------------------------------------------------------
+
+This module defines the a class ``MyList`` that inherits from list builtin. It has a public instance method with prototype def print_sorted(self) that prints the list, but sorted(ascending sort)
+
+::
+
+    importing the class MyList
+    >>> MyList = __import__('1-my_list').MyList
+
+    Creating an instance of the MyList class
+    >>> my_list = MyList()
+
+    checking the type of the object
+    >>> type(my_list)
+    <class '1-my_list.MyList'>
+
+::
+
+    checking if it it is an empty list
+    >>> print(my_list)
+    []
+
+    has a single argument which is an iterable object
+
+    >>> my_list = MyList([1, 2, 4])
+    >>> print(my_list)
+    [1, 2, 4]
+
+::
+
+    >>> my_list = MyList(None)
+    Traceback (most recent call last):
+    TypeError: 'NoneType' object is not iterable
+
+::
+
+    TypeError should be raised for anymore that one instantiation
+    >>> my_list = MyList([2, 3], [4, 5])
+    Traceback (most recent call last):
+    TypeError: list() takes at most 1 argument (2-given)
+
+
+
+    Testing the appending of items into the list
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    The order of the original list remains unchanged even after the call to the method
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+
+    Replaced with indexing:
+
+::
+
+    >>> my_list[0] = 5
+    >>> print(my_list)
+    [5, 2, 3]
+
+And removed with the ``remove()`` method.
+
+::
+
+    >>> my_list.remove(5)
+    >>> print(my_list)
+    [2, 3]
+
+    the class ``MyList`` also implements a single method - a public instance method
+``print_sorted(self)``.
+
+::
+
+    >>> my_list = MyList()
+    >>> print(my_list.print_sorted)
+    <bound method MyList.print_sorted of []>
