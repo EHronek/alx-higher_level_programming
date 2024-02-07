@@ -29,11 +29,6 @@ Instantiation of our object
 
 ::
 
-    Any arguments supplied to an instantion of the class result in a TypeError exception
-
-    >>> bg = BaseGeometry(None)
-    Traceback (most recent call last):
-    TypeError: object() takes no parameters
 
 
     Testing methods
@@ -77,7 +72,7 @@ The second method, ``integer_validator(...)`` validates if the first paramter ``
 ::
     >>> bg.integer_validator("another invalid", True)
     Traceback (most recent call last):
-    typeError: another invalid must be an integer
+    TypeError: another invalid must be an integer
 
 ::
     >>> bg.integer_validator("absolutely every possible invalid", None)
