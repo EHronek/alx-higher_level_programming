@@ -4,5 +4,4 @@ it to stdout
 """
 def read_file(filename=''):
     with open(filename, 'r', encoding="utf-8") as f:
-        read_file = f.read()
-    print(read_file)
+        print(f.read(), end='')
