@@ -2,6 +2,8 @@
 """ defines a function that that reads a text file(utf-8) and prints
 it to stdout
 """
+
+
 def read_file(filename=''):
     """prints contents of utf8 text to stdout
     Args:
