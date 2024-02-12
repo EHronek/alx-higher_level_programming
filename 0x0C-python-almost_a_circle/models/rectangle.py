@@ -87,9 +87,12 @@ class Rectangle(Base):
 
     def display(self):
         """ prints the rectangle to stdout with # symbol """
+        [print("") for _ in range(self.y)]
         for _ in range(self.height):
-            print("#" * self.width)
+            [print(" ", end='') for _ in range(self.x)]
+            [print('#', end='') for _ in range(self.width)]
+            print('')
 
     def __str__(self):
-        """ for readable user friendly representation of an object"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+       """ for readable user friendly representation of an object"""
+       return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
