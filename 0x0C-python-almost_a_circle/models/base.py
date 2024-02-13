@@ -54,7 +54,7 @@ class Base:
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 dummy = cls(1, 1)
-	else:
+        else:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
