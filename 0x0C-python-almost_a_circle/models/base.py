@@ -38,3 +38,9 @@ class Base:
         file_name = cls.__name__ + ".json"
         with open(file_name, "w") as f:
             f.write(cls.to_json_string([objs.to_dictionary() for objs in list_objs]))
+
+    def from_json_string(json_string):
+        """ returns the list of the json string representation json_string"""
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
