@@ -121,8 +121,8 @@ class Rectangle(Base):
                 if k == "id":
                     if v is None:
                         self.__init__(self.width,
-                             self.height,
-                             self.x, self.y)
+                                 self.height,
+                                 self.x, self.y)
                     else:
                         self.id = v
                 elif k == "width":
@@ -142,4 +142,4 @@ class Rectangle(Base):
             "height": self.height,
             "x": self.x,
             "y": self.y
-	}
+            }
