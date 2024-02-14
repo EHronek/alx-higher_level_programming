@@ -13,9 +13,10 @@ class Base:
     def __init__(self, id=None):
         """instantiation of our class object
         Args:
-            id (any): the id to manage in all future classes
+            id (any): the id
 
 """
+        self.__nb_objects = 0
         if id is not None:
             self.id = id
         else:
@@ -61,7 +62,7 @@ class Base:
     def load_from_file(cls):
         """ returns a list of instances"""
         filename = __class__.__name__ + ".json"
-        try:
+	try:
             with open(filename, "r") as file:
                 list_dicts = cls.from_json_string(file.read())
                 return [cls.create(**d) for d in list_dicts]
