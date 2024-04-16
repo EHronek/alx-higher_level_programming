@@ -1,16 +1,19 @@
 #!/usr/bin/node
-let args = process.argv.splice(2);
-args = parseInt(args);
+const args = process.argv.slice(2).map(Number);
 len = args.length;
-if (len === 0) console.log(0);
-if (len === 1) console.log(1);
-if (len >= 2) {
-  for (let i = 0; i < len; i++) {
-    let max = 0;
-    max = args[i];
-    if (args[i] < args[i + 1]) {
-      max = args[ i+ 1];
-    } else {
-        max = args[i];
-}
+if (len === 0 || len === 1) {
+  console.log(0);
+} else {
+  let max = -Infinity;
+  let secMax = -Infinity;
+
+  for (const num of args) {
+    if (num > max) {
+      secMax = max;
+      max = num;
+    } else if (num > secMax && num !== max) {
+      secMax = num;
+    }
+  }
+  console.log(secMax);
 }
