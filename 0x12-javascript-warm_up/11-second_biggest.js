@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const args = process.argv.slice(2).map(Number);
-len = args.length;
+const len = args.length;
 if (len === 0 || len === 1) {
   console.log(0);
 } else {
