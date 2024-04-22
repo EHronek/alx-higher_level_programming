@@ -25,7 +25,7 @@ fs.readFile(src1, 'utf8', (err, data) => {
       }
       fs.readFile(dest, 'utf8', (err, data) => {
         if (err) console.log(`Error reading ${dest}`);
-        else console.log(data);
+        else process.stdout.write(data);
       });
     });
   });
