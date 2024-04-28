@@ -12,9 +12,7 @@ if __name__ == '__main__':
         )
     cursor = db_conn.cursor()
     query = "SELECT * FROM states WHERE name = %s ORDER BY id"
-    if sys.argv[4] != 'Arizona' or sys.argv[4]:
-        print('')
-    cursor.execute(query, (sys.argv[4],))
+    safer_state_name = sys.argv[4].replace("'", "''")
+    cursor.execute(query, (safer_state_name,))
     for row in cursor.fetchall():
-        if row[1] == sys.argv[4]:
-            print(row)
+        print(row)
