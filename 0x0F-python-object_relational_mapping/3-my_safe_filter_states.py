@@ -6,14 +6,15 @@ that is safe from sql injection
 """
 if __name__ == '__main__':
     db_conn = MySQLdb.connect(
-        host='localhost'
-	user=sys.argv[1]
-	passwd=sys.argv[2]
-	port=3306
-	db=sys.argv[3]
+        host='localhost',
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        port=3306,
+        db=sys.argv[3]
     )
     cursor = db_conn.cursor()
-    cursor.execute("SELECT * FROM states")
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
+    cursor.execute(query, (sys.argv[4],))
     for row in cursor.fetchall():
-        if row[1] == sys.argv[4]
-	print(row)
+        if row[1] == sys.argv[4]:
+            print(row)
