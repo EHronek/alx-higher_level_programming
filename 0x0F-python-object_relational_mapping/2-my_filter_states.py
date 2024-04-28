@@ -14,8 +14,8 @@ if __name__ == '__main__':
     )
     cursor = db_conn.cursor()
     cursor.execute("SELECT * \
-                        FROM states \
-                        WHERE BINARY name = '{}'".format(sys.argv[4]))
+                        FROM `states` \
+                        WHERE BINARY `name` = '{}'".format(sys.argv[4]))
     for row in cursor.fetchall():
         print(row)
     cursor.close()
