@@ -14,14 +14,11 @@ if __name__ == '__main__':
     c = db_conn.cursor()
     state_name_clean = sys.argv[4].replace("'", "''")
     c.execute("""
-    SELECT cities.name
+    SELECT *
     FROM cities
-    JOIN states
-    ON state_id=states.id
-    WHERE states.name LIKE BINARY %s
+    INNER JOIN states
+    ON cities.state_id=states.id
     ORDER BY cities.id
-    """, (state_name_clean,))
-    rows = c.fetchall()
-
-    for row in rows:
-        print(row[0])
+    """)
+    print(', '.join([city[2] for city in c.fetchall()
+                            if city[4] == sys.argv[4]]))
