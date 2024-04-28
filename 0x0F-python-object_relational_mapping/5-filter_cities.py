@@ -6,13 +6,12 @@ state"""
 if __name__ == '__main__':
     db_conn = MySQLdb.connect(
         host='localhost',
-	user=sys.argv[1],
-	passwd=sys.argv[2],
-	port=3306,
-	db=sys.argv[3]
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        port=3306,
+        db=sys.argv[3]
     )
     c = db_conn.cursor()
-    state_name_clean = sys.argv[4].replace("'", "''")
     c.execute("""
     SELECT *
     FROM cities
@@ -20,5 +19,6 @@ if __name__ == '__main__':
     ON cities.state_id=states.id
     ORDER BY cities.id
     """)
-    print(', '.join([city[2] for city in c.fetchall()
-                            if city[4] == sys.argv[4]]))
+    print(', '.join([city[2]
+                    for city in c.fetchall()
+                    if city[4] == sys.argv[4]]))
