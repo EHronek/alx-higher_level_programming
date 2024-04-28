@@ -16,6 +16,7 @@ if __name__ == '__main__':
     cursor.execute("SELECT * \
                         FROM states \
                         WHERE BINARY name = '{}'".format(sys.argv[4]))
-    print(cursor.fetchone())
+    for row in cursor.fetchall():
+        print(row)
     cursor.close()
     db_conn.close()
