@@ -5,16 +5,11 @@ import MySQLdb
 that is safe from sql injection
 """
 if __name__ == '__main__':
-    db_conn = MySQLdb.connect(
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-        )
-    cursor = db_conn.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
-    if sys.argv[4] != 'Arizona' or sys.argv[4]:
-        print('')
-    cursor.execute(query, (sys.argv[4],))
-    for row in cursor.fetchall():
-        if row[1] == sys.argv[4]:
-            print(row)
+    user, password, database, state = argv[1], argv[2], argv[3], argv[4]
+    db = MySQLdb.connect(host="localhost",
+                         user=user, passwd=password, db=database)
+    db = db.cursor()
+    db.execute("""SELECT * FROM states WHERE name=%s ORDER BY id""", (state,))
+    r = db.fetchall()
+    for i in r:
+        print(i)
