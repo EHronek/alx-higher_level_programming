@@ -13,8 +13,9 @@ if __name__ == '__main__':
         db='hbtn_0e_0_usa'
     )
     cursor = db_conn.cursor()
-    query = 'SELECT * FROM states WHERE BINARY name = "{}" ORDER BY id'.format(sys.argv[4])
-    cursor.execute(query)
-    print(cursor.fetchall())
+    cursor.execute("SELECT * \
+                        FROM states \
+                        WHERE BINARY name = '{}'".format(sys.argv[4]))
+    print(cursor.fetchone())
     cursor.close()
     db_conn.close()
