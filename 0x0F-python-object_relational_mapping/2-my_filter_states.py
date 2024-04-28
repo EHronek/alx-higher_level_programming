@@ -13,8 +13,8 @@ if __name__ == '__main__':
         db='hbtn_0e_0_usa'
     )
     cursor = db_conn.cursor()
-    query = 'SELECT * FROM states WHERE name = %s ORDER BY id'
-    cursor.execute(query, (sys.argv[4],))
+    query = 'SELECT * FROM states WHERE name = "{}" ORDER BY id'.format(sys.argv[4])
+    cursor.execute(query)
     print(cursor.fetchone())
     cursor.close()
     db_conn.close()
