@@ -18,5 +18,3 @@ if __name__ == '__main__':
                         WHERE BINARY `name` = '{}'".format(sys.argv[4]))
     for row in cursor.fetchall():
         print(row)
-    cursor.close()
-    db_conn.close()
