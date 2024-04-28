@@ -15,6 +15,6 @@ if __name__ == '__main__':
     cursor = db_conn.cursor()
     query = 'SELECT * FROM states WHERE name = "{}" ORDER BY id'.format(sys.argv[4])
     cursor.execute(query)
-    print(cursor.fetchone())
+    print(cursor.fetchall())
     cursor.close()
     db_conn.close()
