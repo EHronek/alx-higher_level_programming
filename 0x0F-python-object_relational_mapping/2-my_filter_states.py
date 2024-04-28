@@ -13,7 +13,7 @@ if __name__ == '__main__':
         db='hbtn_0e_0_usa'
     )
     cursor = db_conn.cursor()
-    query = 'SELECt * FROM states WHERE name = %s ORDER BY id'
+    query = 'SELECT * FROM states WHERE name = %s ORDER BY id'
     cursor.execute(query, (sys.argv[4],))
     print(cursor.fetchone())
     cursor.close()
