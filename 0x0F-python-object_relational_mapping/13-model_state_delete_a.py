@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""THe Scrpt deletes all Stae objects with the name containing `a` from db
+""" The Script deletes all Stae objects with the name containing `a` from db
 """
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
