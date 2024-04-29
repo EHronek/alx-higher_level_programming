@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
 """takes in the name of states as an argument and lists all cities of the
 state"""
+import sys
+import MySQLdb
 if __name__ == '__main__':
     db_conn = MySQLdb.connect(
         host='localhost',
