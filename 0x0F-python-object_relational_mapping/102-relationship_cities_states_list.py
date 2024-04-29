@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" Lists all the states and corresponding Cities in the database"""
+"""Lists all City objectss from the database"""
 import sys
-from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 from relationship_state import State
 from relationship_city import City
 
@@ -12,8 +12,5 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("	{}: {}".format(city.id, city.name))
+    for city in session.query(City).order_by(City.id):
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
