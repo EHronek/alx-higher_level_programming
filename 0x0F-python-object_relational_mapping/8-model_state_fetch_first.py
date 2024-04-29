@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Script that prints the first State object from the database"""
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
