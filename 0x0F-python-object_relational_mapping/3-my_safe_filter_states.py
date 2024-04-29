@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
 """Displays all the values in the states tab;e of the database and
 that is safe from sql injection
 """
+import sys
+import MySQLdb
 if __name__ == '__main__':
     db_conn = MySQLdb.connect(
         user=sys.argv[1],
