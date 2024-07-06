@@ -25,7 +25,7 @@ class Student:
         Args:
             attrs (list):attributes to represent
 """
-	if attrs is None:
+        if attrs is None:
             return self.__dict__
 
         else:
