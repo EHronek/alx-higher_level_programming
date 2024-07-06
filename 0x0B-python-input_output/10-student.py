@@ -29,7 +29,12 @@ class Student:
             return self.__dict__
 
         else:
-            result = {}
+            '''result = {}
             if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
                 return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)} 
-            return self.__dict__
+            return self.__dict__'''
+            result = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    result[attr] = getattr(self, attr)
+            return result
