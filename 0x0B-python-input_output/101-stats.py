@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""script that reads stdin line by libe and computes metrics"""
 import sys
+
 
 def print_stats(total_size, status_codes):
     """Prints the accumulated metrics"""
@@ -7,6 +9,7 @@ def print_stats(total_size, status_codes):
     for code in sorted(status_codes):
         if status_codes[code] > 0:
             print("{}: {}".format(code, status_codes[code]))
+
 
 total_size = 0
 status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
@@ -36,4 +39,3 @@ except KeyboardInterrupt:
 
 finally:
     print_stats(total_size, status_codes)
-
