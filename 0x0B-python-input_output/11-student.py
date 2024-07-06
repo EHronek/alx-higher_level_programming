@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ Defines a class student based on 10-student.py"""
 
 
