@@ -8,7 +8,7 @@ import sys
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     q = sys.argv[1] if len(sys.argv) > 1 else ""
-    res = request.post(url, data={"q": q})
+    res = requests.post(url, data={"q": q})
 
     try:
         js_data = res.json()
