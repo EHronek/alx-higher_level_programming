@@ -11,9 +11,6 @@ if __name__ == "__main__":
     repo = sys.argv[1]
     owner = sys.argv[2]
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
-    repo = sys.argv[1]
-    owner = sys.argv[2]
-
     res = requests.get(url, params={"per_page": 10})
     if res.status_code == 200:
         commits = res.json()
