@@ -11,9 +11,9 @@ if __name__ == "__main__":
     res = request.post(url, data={"q": q})
 
     try:
-        json_data = res.json()
-        if json.data:
-            print(f"[{json_data.get('id')}] {json_data.get('name')}")
+        js_data = res.json()
+        if js_data:
+            print(f"[{js_data.get('id')}] {js_data.get('name')}")
         else:
             print("No result")
     except ValueError:

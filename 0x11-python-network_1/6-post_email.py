@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """takes in a url and email address, sends a post request
 to url with email as param and displays the body"""
+
 import requests
 import sys
 
